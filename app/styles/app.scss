@@ -1,0 +1,58 @@
+@import "bootstrap";
+
+.information { 
+    max-width:20%;
+    padding:20px;
+    float:left;
+}
+
+.calculator{
+    max-width:60%;
+    padding:15px;
+    margin:auto;
+    
+    h1 {
+    
+    text-align:center;
+    }
+}
+
+.white_space{
+    max-width:20%;
+    padding:20px;
+    float:right;
+}
+
+.faqHeader {
+        font-size: 24px;
+        margin: 20px;
+    }
+
+.panel-heading [data-toggle="collapse"]:after {
+        font-family: 'Glyphicons Halflings';
+        content: ""; /* "play" icon */
+        float: right;
+        color: #F58723;
+        font-size: 18px;
+        line-height: 22px;
+        /* rotate "play" icon from > (right arrow) to down arrow */
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+
+.panel-heading [data-toggle="collapse"].collapsed:after {
+        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: #454444;
+    }
+    
+.btn-lg{
+border-radius: 20px;
+}

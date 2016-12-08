@@ -1,0 +1,106 @@
+<div class="container" style="width:1280px;">
+
+    
+    <div class="calculator" >
+        <h2> Calculator</h2>
+        
+<form class="form-horizontal">
+<fieldset>
+
+
+<!-- Button Drop Down -->
+<div class="form-group">
+    <label for="country">Country</label>
+    <select class="form-control" id="country">
+      <option>France</option>
+      <option>England</option>
+      <option>Germany</option>
+      <option>Italy</option>
+      <option>Ukraine</option>
+    </select>
+  </div>
+
+<!-- Button Drop Down -->
+<div class="form-group">
+  <label for="buttoncurrency">Enter Amount</label>
+  <div class="amount">
+    <div class="input-group">
+      <input id="buttoncurrency" name="buttoncurrency" class="form-control" placeholder="0.00" type="text">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          EUR
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu pull-right">
+          <li><a href="#">EUR</a></li>
+          <li><a href="#">GBP</a></li>
+          <li><a href="#">USD</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+  <div class="form-group">
+    <label for="Description">Product Description</label>
+    <input type="email" class="form-control" id="description" placeholder="Description">
+
+  </div>
+
+</fieldset>
+</form>
+
+<input type="submit" class="btn btn-info btn-lg" value="Calculate" onclick="getProduct()">
+
+<br />
+<br />
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Product Description</th>
+        <th>Country Purchased </th>
+        <th>Amount</th>
+        <th>Amount in EUR</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+        
+        
+    </div> <!-- /.calculator -->
+     
+
+</div> <!-- /.container -->
+
+<script>
+function getProduct() {
+    document.getElementById("description").submit();
+}
+
+function getCost(){
+  
+}
+
+function getCountry(){
+}
+</script>
