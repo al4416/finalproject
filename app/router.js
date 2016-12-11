@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('FAQ');
   this.route('about');
+  this.route('country_rates');
 });
 
 export default Router;

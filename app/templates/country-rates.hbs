@@ -1,0 +1,24 @@
+
+<h1> EU countries and VAT Rates</h1>
+
+<br />
+<br />
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <th>Country</th>
+            <th> VAT standard rate</th>
+            <th> Minimum Spend</th>
+        </thead>
+        <tbody>
+            {{#each model as |country_tax|}}
+            <tr>
+                <th>{{country_tax.country}}</th>
+                <th>{{country_tax.tax_rate_display}}</th>
+                <th>{{country_tax.limit_display}}</th>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
