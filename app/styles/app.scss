@@ -6,16 +6,6 @@
     float:left;
 }
 
-.calculator{
-    max-width:60%;
-    padding:15px;
-    margin:auto;
-    
-    h1 {
-    
-    text-align:center;
-    }
-}
 
 .white_space{
     max-width:20%;
@@ -55,4 +45,17 @@
     
 .btn-lg{
 border-radius: 20px;
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
 }

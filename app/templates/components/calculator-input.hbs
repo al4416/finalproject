@@ -1,0 +1,39 @@
+
+<form class="col-md-8 col-centered">
+
+    <div class="form-group">
+      <label for="country" class="col-sm-2 ">Country</label>
+      <div class="col-sm-10">
+      <select class="form-control" id="country">
+        <option>France</option>
+        <option>England</option>
+        <option>Germany</option>
+        <option>Italy</option>
+        <option>Ukraine</option>
+      </select>
+      </div>
+    </div>
+  
+<br /><br />
+  
+    <div class="form-group">
+        <label for="amount" class="col-sm-2 ">Amount</label>
+        <div class="col-sm-10">
+            {{input value=amount type="number" placeholder="Amount" class="form-control"}}
+        </div> 
+    </div>
+<br /><br />
+
+    <div class="form-group">
+        <label for="product" class="col-sm-2 ">Description</label>
+        <div class="col-sm-10">
+        {{input value=description placeholder="Product Description" class="form-control"}}
+        </div> 
+    </div>
+
+<br /><br />
+<div class="row-centered">
+  <button {{action "save" model}} class="btn btn-primary">Calculate</button>
+  <button {{action "reset" model}} class="btn btn-link">Reset</button>
+</div>
+</form>

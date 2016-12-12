@@ -1,0 +1,20 @@
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <th>Product</th>
+            <th>Country</th>
+            <th>Amount</th>
+            <th>Amount after Refund</th>
+        </thead>
+        <tbody>
+            {{#each model as |array|}}
+            <tr>
+                <th>{{calculator-input.description}}</th>
+                <th>{{calculator-input.country}}</th>
+                <th>{{calculator-input.amount}}</th>
+                <th>{{calculator-input.amount}}*{{country_tax.tax_rate}}</th>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
