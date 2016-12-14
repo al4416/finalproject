@@ -22,7 +22,7 @@
       </div>
     </div>
   
-<br /><br />
+<br />
   
     <div class="form-group col-sm-10">
         <label for="amount">Amount</label>
@@ -31,48 +31,62 @@
         </div> 
     </div>
 
-<br /><br />
+<br />
 
     <div class="form-group col-sm-10">
-        <label for="product">Description</label>
+        <label for="product">Product</label>
         <div>
         {{input value=model.description placeholder="Product Description" class="form-control"}}
         </div> 
     </div>
 
-<br /><br />
+<br />
 
 <div class="row-centered col-sm-10">
   <button {{action "save" model}} class="btn btn-primary">Calculate</button>
-  <button {{action "reset" model}} class="btn btn-link">Reset</button>
-  <button class="btn btn-primary" {{action "createPDF"}}>Create PDF</button>
 </div>
 </form>
+{{#if error}}
+<br /> <br />
+<div class="alert alert-danger row row-centered">
+  <p><strong>Error</strong></p> <small>Please insert Amount</small>
+</div>
+{{/if}}
 
-
+ {{#if output}}
     <br /><br />
+
     <div class="table-responsive">
         <table class="table">
             <thead>
                 <th>Product</th>
                 <th>Country</th>
+                <th>Tax Rate</th>
                 <th>Amount</th>
                 <th> Refund Amount</th>
-                <th>Amount after Refund</th>
-                <th>Tax Rate</th>
+                <th>Amount after Refund (local)</th>
+                <th>Amount after Refund (€)</th>
+                
 
             </thead>
+              
             <tbody>
-                {{#if output}}
+             
                 <tr>
                     <th>{{output.description}}</th>
                     <th>{{output.country}}</th>
-                    <th>${{output.amount}}</th>
-                    <th>${{output.refund}}</th>
-                    <th>${{output.refundAmount}}</th>
                     <th>{{output.taxRate}}%</th>
+                    <th>{{output.currency}} {{output.amount}}</th>
+                    <th>{{output.currency}} {{output.refund}}</th>
+                    <th>{{output.currency}} {{output.refundAmount}}</th>
+                    <th> € {{output.toEuro}}</th>
+                       
                 </tr>
-                {{/if}}
             </tbody>
+          
         </table>
+
     </div>
+             <button class="btn btn-primary" {{action "createPDF"}}>Save As PDF</button>
+        <br />
+         {{/if}}
