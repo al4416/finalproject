@@ -1,9 +1,16 @@
 
-<form class="col-md-8 col-centered">
+<form class="col-xs-12 col-md-8 col-centered">
 
-    <div class="form-group">
-      <label for="country" class="col-sm-2 ">Country</label>
-      <div class="col-sm-10">
+    <div class="form-group col-sm-10">
+      <label for="country">Country</label>
+      <div>
+      {{#x-select id="country" value=model.country action="selectCountry" as |xs|}}
+        {{#each countryOptions as |country|}}
+            {{#xs.option value=country}}{{country}}{{/xs.option}}
+        {{/each}}
+      {{/x-select}}
+      
+      <!--
       <select class="form-control" id="country">
         <option>France</option>
         <option>England</option>
@@ -11,29 +18,61 @@
         <option>Italy</option>
         <option>Ukraine</option>
       </select>
+      -->
       </div>
     </div>
   
 <br /><br />
   
-    <div class="form-group">
-        <label for="amount" class="col-sm-2 ">Amount</label>
-        <div class="col-sm-10">
-            {{input value=amount type="number" placeholder="Amount" class="form-control"}}
-        </div> 
-    </div>
-<br /><br />
-
-    <div class="form-group">
-        <label for="product" class="col-sm-2 ">Description</label>
-        <div class="col-sm-10">
-        {{input value=description placeholder="Product Description" class="form-control"}}
+    <div class="form-group col-sm-10">
+        <label for="amount">Amount</label>
+        <div>
+            {{input value=model.amount type="number" placeholder="0.00" class="form-control"}}
         </div> 
     </div>
 
 <br /><br />
-<div class="row-centered">
+
+    <div class="form-group col-sm-10">
+        <label for="product">Description</label>
+        <div>
+        {{input value=model.description placeholder="Product Description" class="form-control"}}
+        </div> 
+    </div>
+
+<br /><br />
+
+<div class="row-centered col-sm-10">
   <button {{action "save" model}} class="btn btn-primary">Calculate</button>
   <button {{action "reset" model}} class="btn btn-link">Reset</button>
+  <button class="btn btn-primary" {{action "createPDF"}}>Create PDF</button>
 </div>
 </form>
+
+
+    <br /><br />
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <th>Product</th>
+                <th>Country</th>
+                <th>Amount</th>
+                <th> Refund Amount</th>
+                <th>Amount after Refund</th>
+                <th>Tax Rate</th>
+
+            </thead>
+            <tbody>
+                {{#if output}}
+                <tr>
+                    <th>{{output.description}}</th>
+                    <th>{{output.country}}</th>
+                    <th>${{output.amount}}</th>
+                    <th>${{output.refund}}</th>
+                    <th>${{output.refundAmount}}</th>
+                    <th>{{output.taxRate}}%</th>
+                </tr>
+                {{/if}}
+            </tbody>
+        </table>
+    </div>

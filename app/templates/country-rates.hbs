@@ -9,7 +9,8 @@
         <thead>
             <th>Country</th>
             <th> VAT standard rate</th>
-            <th> Minimum Spend</th>
+            <th> Minimum Spend (Local Rate)</th>
+  
         </thead>
         <tbody>
             {{#each model as |country_tax|}}
@@ -17,6 +18,7 @@
                 <th>{{country_tax.country}}</th>
                 <th>{{country_tax.tax_rate_display}}</th>
                 <th>{{country_tax.limit_display}}</th>
+  
             </tr>
             {{/each}}
         </tbody>
